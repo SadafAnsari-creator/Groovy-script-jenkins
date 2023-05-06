@@ -5,13 +5,15 @@ pipeline {
     }
     parameters {
      string(name: 'person', defaultValue: 'Ansari',)
-     booleanParam(name: 'ismale', defaultValue: 'true',)
+     booleanParam(gender: 'ismale', defaultValue: 'true',)
     }
     stages {
       stage('Build') {
             steps {
                 echo 'Hello World This is for my build stage'
                  sh 'echo "my name is ${name}" '  
+                 sh 'echo "my name is ${name}" '
+                 sh 'echo "my name is ${gender}" ' 
   }
      }
       stage('TEst') {
