@@ -1,19 +1,19 @@
 pipeline {
     agent any
     environment {
-     name = ''
+     name = 'Sadaf'
     }
     parameters {
      string(name: 'person', defaultValue: 'Ansari',)
-     booleanParam(name: 'ismale', defaultValue: 'true',)
+     booleanParam(name: 'male', defaultValue: 'true',)
     }
     stages {
       stage('Build') {
             steps {
                 echo 'Hello World This is for my build stage'
                  sh 'echo "my name is ${name}" '  
-                 sh 'echo "my name is ${name}" '
-                 sh 'echo "my name is ${name}" ' 
+                 sh 'echo "my name is ${person}" '
+                 sh 'echo "my gender is ${male}" ' 
   }
      }
       stage('TEst') {
