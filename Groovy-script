@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Hello World This is for my build stage'
+            }
+        }
+     stage('TEst') {
+            steps {
+                echo 'Hello World This is for my testing stage'
+            }
+       }
+      stage('Deploy') {
+            steps {
+                echo 'Hello World this is for my deploying stage '
+            }
+       }     
+      stage('for running cmd'){
+        steps{
+          sh'''
+           ls
+           pwd
+           date
+          '''
+        }
+      }
+    }
+}
