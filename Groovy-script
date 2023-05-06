@@ -1,17 +1,17 @@
 pipeline {
     agent any
-    environment variables{
+    environment {
      name = 'sadaf'
     }
     stages {
-        stage('Build') {
+      stage('Build') {
             steps {
                 echo 'Hello World This is for my build stage'
                  sh 'echo "my name is ${name}" '  
   }
-        }
-     stage('TEst') {
-      environment variables{
+     }
+      stage('TEst') {
+       environment {
         age = '18'
      }
             steps {
@@ -19,8 +19,8 @@ pipeline {
                  sh 'echo "my age is ${age}" '
                  sh 'echo "my name is ${name}" '
                      
-            }
-       }
+      }
+  }
       stage('Deploy') {
             steps {
                 echo 'Hello World this is for my deploying stage '
