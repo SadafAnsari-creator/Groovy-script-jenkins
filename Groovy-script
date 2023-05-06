@@ -3,6 +3,10 @@ pipeline {
     environment {
      name = 'sadaf'
     }
+    parameters{
+     string(name: 'person', defaultvalue: 'Ansari',)
+     booleanParam(name: 'ismale', defaultvalue: 'true',)
+    }
     stages {
       stage('Build') {
             steps {
